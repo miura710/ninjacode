@@ -1,0 +1,9 @@
+@mixin title-after{
+  position: absolute;
+  left:50%;
+  bottom:0;
+  width:20px;
+  height:2px;
+  background-color:$black;
+  transform: translateX(-50%);
+}

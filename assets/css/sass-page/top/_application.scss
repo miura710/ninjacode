@@ -1,0 +1,90 @@
+.application{
+  width:100%;
+  height:auto;
+  margin-bottom: 240px;
+  @include mq('sp'){
+    margin-bottom: 180px;
+  }
+  &-wrap{
+    width:100%;
+  }
+  &-title{
+    @include title;
+    &::after{
+      content:"";
+      @include title-after;
+    }
+  }
+  &-contents{
+    width:100%;
+    display:flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    @include mq('sp'){
+      display:block;
+      margin-top: 24px;
+    }
+    &-title{
+      @include contents-title;
+      @include mq('sp'){
+        margin-top: 24px;
+        text-align: center;
+      }
+      &::before,&::after{
+        content:"";
+        @include contents-title-before-after;
+      }
+      &::before{
+        margin-right: 8px;
+      }
+      &::after{
+        margin-left: 8px;
+      }
+    }
+    &-text{
+      line-height: 2.0;
+      p{
+        font-size:2rem;
+        &::first-letter{
+          font-weight: 800;
+        }
+      }
+    }
+  }
+  &-img{
+    width:60%;
+    height:580px;
+    @include mq('sp'){
+      width:100%;
+    }
+    img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+    }
+  }
+  &-text{
+    width:40%;
+    padding-left: 40px;
+    position: relative;
+    @include mq('sp'){
+      width:100%;
+      line-height: 2.4;
+    }
+    &::before{
+      background-color: #eee;
+      position: absolute;
+      content:"";
+      right: 0;
+      width:calc(100% + 200px);
+      height:calc(100% + 200px);
+      bottom:-100px;
+      z-index: -1;
+      @include mq('sp'){
+        width:100%;
+        height:calc(100% + 60px);
+        bottom:-50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.card{
+  width:100%;
+  height:auto;
+  margin-bottom: 240px;
+  @include mq('sp'){
+    margin-bottom: 180px;
+  }
+  &-wrap{
+    width:100%;
+  }
+  &-title{
+    @include title;
+    &::before,&::after{
+      content:"";
+      @include title-after;
+    }
+  }
+  &-contents{
+    width:100%;
+    margin: auto;
+    max-width: 1280px;
+  }
+  &-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mq('sp'){
+      display:block;
+    }
+    li{
+      width:calc(100% / 3 - 16px);
+      padding-right: 16px;
+      margin-bottom: 60px;
+      list-style: none;
+      @include mq('sp'){
+        width:100%;
+        padding-right: 0;
+      }
+      &:nth-child(3n){
+        padding-right: 0;
+      }
+    }
+    &-title{
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      @include mq('sp'){
+        text-align: center;
+      }
+    }
+    &-img{
+      width:100%;
+      height:600px;
+      padding: 4px;
+      border: 1px solid #000;
+      margin-bottom: 20px;
+      img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+      }
+    }
+    &-text{
+      font-size: 2rem;
+      @include mq('sp'){
+        text-align: center;
+        line-height: 2;
+      }
+    }
+  }
+}
